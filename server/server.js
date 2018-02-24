@@ -9,20 +9,13 @@ const kanbanRoutes = require('./routes/kanbanApi');
 //CONSTANTS
 const PORT = process.env.PORT || 8080;
 
+
 //APPLICATIONS
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 
 app.use('/api/kanban', kanbanRoutes);
-
-
-
-
-
-// app.get('/', (req,res) => {
-//   res.send('smoke')
-// })
 
 
 
