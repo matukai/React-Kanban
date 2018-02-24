@@ -3,14 +3,24 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const path = require('path');
+const kanbanRoutes = require('./routes/kanbanApi');
 
+
+
+//CONSTANTS
 const PORT = process.env.PORT || 3000;
 
+//APPLICATIONS
 app.use(bodyParser.json());
+app.use('/api/kanban', kanbanRoutes);
 
-app.get('/', (req,res) => {
-  res.send('smoke')
-})
+
+
+
+
+// app.get('/', (req,res) => {
+//   res.send('smoke')
+// })
 
 
 
