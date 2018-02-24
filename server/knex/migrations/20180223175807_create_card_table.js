@@ -1,6 +1,6 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('card', function(table) {
-    table.increments('card-id#');
+    table.increments('id');
     table.text('title');
     table.text('priority');
     table.text('status');

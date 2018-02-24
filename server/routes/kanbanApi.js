@@ -9,23 +9,21 @@ router.route('/')
 })
 .post((req,res) => {
   console.log(req.body)
-
-
-
-  
   return new Card ({
-    title: inputTitle,
-    priority: inputPriority,
-    created_by: inputCreatedBy,
-    assigned_to: inputAssignedTo
+    title: req.body.title,
+    priority: req.body.priority,
+    status: req.body.status,
+    created_by: req.body.created_by,
+    assigned_to: req.body.assigned_to
   })
   .save()
-  .then(result => {
-    result = result.toJSON(result)
-  })
-  .catch(err => {
-    console.log(err)
-  })
+  // .then(result => {
+  //   console.log(result)
+  //   result = result.toJSON(result)
+  // })
+  // .catch(err => {
+  //   console.log(err)
+  // })
 })
 
 
