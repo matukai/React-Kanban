@@ -5,7 +5,8 @@ const Card = require('../knex/models/Card');
 
 router.route('/')
 .get( (req,res) => {
-  return Kanban.fetchAll()
+  return Card
+  .fetchAll()
   .then(result => {
     return res.json(result)
   })
@@ -32,10 +33,8 @@ router.route('/')
 
 router.route('/:id')
 .put((req,res) => {
-  console.log(req)
-  let id = req.params.id;
-  console.log(id)
-  return new Card({'id': id})
+  console.log(req.params.id)
+  return new Card({'id': req.params.id})
   .save({
     title: req.body.title,
     priority: req.body.priority,
@@ -50,7 +49,18 @@ router.route('/:id')
     console.log(err)
   })
 })
-
+.delete((req,res) => {
+  console.log(req)
+  return new Card({'id':req.params.id})
+  .destroy()
+  .then(err => {
+    console.log('DESTROY PROOOOOOOMISE')
+    return res.json(result)
+  })
+  .catch(err => {
+    console.log(err)
+  })
+})
 
 
 
