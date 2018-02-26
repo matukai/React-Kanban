@@ -6,16 +6,23 @@
     "bookshelf": "^0.12.1",
     "gulp-sass": "^3.1.0",
     "knex": "^0.14.4",
+    "node-fetch": "^2.0.0",
     "pg": "^7.4.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
     "react-scripts": "1.1.1",
-    "sass": "^1.0.0-beta.5.2"
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+    "sass": "^1.0.0-beta.5.2",
+    "whatwg-fetch": "^2.0.3",
+    "whatwg-fetch-importable": "^1.0.3"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "proxy": "http://localhost:8080"
 }
