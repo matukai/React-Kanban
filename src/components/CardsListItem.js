@@ -7,7 +7,7 @@ export const CardsListItem = (props) => {
         <div className="card">
 
           <div className="attribute"><span>Title: </span>{props.title}</div>
-          <div className="attribute"><span>Priority: </span>{props.Priority}</div>
+          <div className="attribute"><span>Priority: </span>{props.priority}</div>
           <div className="attribute"><span>Status: </span>{props.status}</div>
           <div className="attribute"><span>Created By: </span>{props.created_by}</div>
           <div className="attribute"><span>Assigned To: </span>{props.assigned_to}</div>
