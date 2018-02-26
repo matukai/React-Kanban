@@ -7,6 +7,9 @@ export default (state = initialState, action) => {
     case LOAD_CARDS:
     console.log('KANBAN REDUCER',action.cards)
       return {...state, cards: action.cards}
+     
+
+
 
     default:
       return state;

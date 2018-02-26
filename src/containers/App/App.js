@@ -6,7 +6,7 @@ import './App.css';
 //ACTIONS
 import { loadCards, setCard} from '../../actions';
 //COMPONENTS
-import CreateCard from '../../components/CreateCard';
+import CreateCard from '../CreateCard'
 import CardsList from '../../components/CardsList';
 
 class App extends Component {
@@ -17,11 +17,10 @@ class App extends Component {
   }
 
 
+
 componentDidMount() {
   this.props.loadCards();
 }
-
-
 
   render() {
     return (
@@ -33,7 +32,7 @@ componentDidMount() {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <CreateCard userInput={this.props.userInput}/>
+        <CreateCard/>
         <CardsList cards={this.props.cards}/>
       </div>
     );
@@ -42,6 +41,7 @@ componentDidMount() {
 
 
 const mapStateToProps = state => {
+  //console.log(state)
   return {
     cards: state.cards.cards
   }

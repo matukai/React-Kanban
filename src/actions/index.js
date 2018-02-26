@@ -1,5 +1,7 @@
 import 'whatwg-fetch';
 
+
+
 const KANBAN_API = '/api/kanban';
 
 export const LOAD_CARDS = 'LOAD_CARDS';
@@ -34,3 +36,6 @@ export const loadCards = () => {
     })
   }
 }
+
+
+//send to database
