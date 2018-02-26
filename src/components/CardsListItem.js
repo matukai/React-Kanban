@@ -1,6 +1,7 @@
 import React from 'react';
 
 export const CardsListItem = (props) => {
+  console.log('CARD LIST ITEM' , props)
   return (
     <li>
         <div className="card">

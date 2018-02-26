@@ -20,11 +20,14 @@ export const loadCards = () => {
       return response.json()
     })
     .then(json => {
-      console.log('ACTIONS',json)
-      return json.results
-    })
-    .then(cards => {
+      //console.log('ACTIONS INDEX',json)
       dispatch({
+        type: LOAD_CARDS,
+        cards: json
+      })
+    })
+    .catch(err => {
+      return dispatch({
         type: LOAD_CARDS,
         cards: []
       })

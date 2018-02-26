@@ -43,7 +43,7 @@ componentDidMount() {
 
 const mapStateToProps = state => {
   return {
-    //cards: state.cards.cards
+    cards: state.cards.cards
   }
 }
 
