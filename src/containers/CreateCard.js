@@ -47,7 +47,7 @@ handleCardAssignedTo(event) {
 submitHandler(event) {
   event.preventDefault();
   this.props.makeCard(this.state.newCard)
-  this.setState(this.props.newCard)
+  this.setState({newCard: Object.assign({}, this.state.newCard, { title: '', priority: '', status: '', created_by: '', assigned_to: ''})})
 }
 
 
