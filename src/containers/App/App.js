@@ -5,9 +5,12 @@ import logo from './logo.svg';
 import './App.css';
 //ACTIONS
 import { loadCards } from '../../actions';
+//SMART COMPONENTS
+import CreateCard from '../CreateCard';
+import CardEdit from '../CardEdit';
 //COMPONENTS
-import CreateCard from '../CreateCard'
 import CardsList from '../../components/CardsList';
+
 
 class App extends Component {
 
@@ -18,6 +21,23 @@ class App extends Component {
 componentDidMount() {
   this.props.loadCards();
 }
+
+clickHandler (event) {
+  const cardName = event.currentTarget
+  console.log(cardName)
+}
+
+findCard (name) {
+  const foundCard = this.props.cards.find(card => {
+    return card.name === name;
+  })
+  console.log(foundCard)
+}
+
+
+
+
+
 
   render() {
     return (
@@ -30,10 +50,10 @@ componentDidMount() {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <CreateCard/>
-        <CardsList status={"queue"} cards={this.props.cards} filter={"queue"}/>
+        <CardEdit/>
+        <CardsList status={"queue"} cards={this.props.cards} filter={"queue"} clickHandler={this.clickHandler}/>
         <CardsList status={"inProgress"} cards={this.props.cards} filter={"inProgress"}/>
         <CardsList status={"done"} cards={this.props.cards} filter={"done"}/>
-
       </div>
     );
   }
@@ -41,7 +61,6 @@ componentDidMount() {
 
 
 const mapStateToProps = state => {
-  //console.log('MAP STATE TO PROPS STATE',state.cards.cards)
   return {
     cards: state.cards.cards,
     newCard: state.cards.cards
@@ -53,10 +72,7 @@ const mapDispatchToProps = dispatch => {
   return {
     loadCards: () => {
       dispatch(loadCards());
-    },
-    // setCard: card => {
-    //   dispatch(setCard(card));
-    // }
+    }
   }
 }
 
