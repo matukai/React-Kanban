@@ -46,11 +46,8 @@ handleCardAssignedTo(event) {
 
 submitHandler(event) {
   event.preventDefault();
-  //console.log(makeCard)
   this.props.makeCard(this.state.newCard)
-  // .then(result => {
-  //   console.log('CREATECARD PROMISE', result)
-  // })
+  this.setState(this.props.newCard)
 }
 
 
@@ -101,8 +98,9 @@ render() {
 }//end CreateCard
 
 const mapStateToProps = state => {
+  //console.log('CREATE CARD', state)
   return {
-
+    cards: state.cards.cards
   }
 }
 

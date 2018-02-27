@@ -5,6 +5,7 @@ export const CardsListItem = (props) => {
   return (
     <li>
         <div className="card">
+          <h1>Card</h1>
           <div className="attribute"><span>Title: </span>{props.title}</div>
           <div className="attribute"><span>Priority: </span>{props.priority}</div>
           <div className="attribute"><span>Status: </span>{props.status}</div>
@@ -15,5 +16,6 @@ export const CardsListItem = (props) => {
     </li>
   );
 }
+
 
 export default CardsListItem;

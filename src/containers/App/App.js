@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import logo from './logo.svg';
 import './App.css';
 //ACTIONS
-import { loadCards, setCard} from '../../actions';
+import { loadCards } from '../../actions';
 //COMPONENTS
 import CreateCard from '../CreateCard'
 import CardsList from '../../components/CardsList';
@@ -13,7 +13,6 @@ class App extends Component {
 
   constructor(props) {
     super(props)
-
   }
 
 componentDidMount() {

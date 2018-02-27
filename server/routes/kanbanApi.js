@@ -26,6 +26,7 @@ router.route('/')
   })
   .save()
   .then(result => {
+    //console.log(result)
     return res.json(result)
   })
   .catch(err => {
