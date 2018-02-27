@@ -41,9 +41,10 @@ componentDidMount() {
 
 
 const mapStateToProps = state => {
-  //console.log(state)
+  //console.log('MAP STATE TO PROPS STATE',state.cards.cards)
   return {
-    cards: state.cards.cards
+    cards: state.cards.cards,
+    newCard: state.cards.cards
   }
 }
 

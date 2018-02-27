@@ -1,13 +1,12 @@
 import React from 'react';
 import CardsListItem from './CardsListItem';
-import Queue from './Queue';
 
 
 export default (props) => {
   let cards = props.cards;
   let filter = props.filter;
   let status = props.status
-
+  console.log('CARDS LIST',cards)
 return (
   <div className={status}>
     {cards.filter((element)=> {

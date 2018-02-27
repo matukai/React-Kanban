@@ -38,17 +38,15 @@ export const makeCard = (newCard) => {
       body: JSON.stringify(newCard)
     })
     .then(response => {
-      console.log(response)
-      //return response.json()
-      return loadCards(dispatch)
-
+      console.log('response from server',response)
+      return response.json()
     })
     .then(json => {
       console.log(json)
-      return loadCards(dispatch({
+      return dispatch({
           type: MAKE_CARD,
-          cards: json
-      }))
+          card: json
+      })
     })
     .catch(err => {
       return dispatch({
