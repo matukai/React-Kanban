@@ -5,6 +5,7 @@ const Card = require('../knex/models/Card');
 
 router.route('/')
 .get( (req,res) => {
+  //console.log(req)
   return Card
   .fetchAll()
   .then(result => {
@@ -15,6 +16,7 @@ router.route('/')
   })
 })
 .post((req,res) => {
+  //console.log(req.body)
   return new Card ({
     title: req.body.title,
     priority: req.body.priority,
