@@ -30,7 +30,10 @@ componentDidMount() {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <CreateCard/>
-        <CardsList cards={this.props.cards}/>
+        <CardsList status={"queue"} cards={this.props.cards} filter={"queue"}/>
+        <CardsList status={"inProgress"} cards={this.props.cards} filter={"inProgress"}/>
+        <CardsList status={"done"} cards={this.props.cards} filter={"done"}/>
+
       </div>
     );
   }

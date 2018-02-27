@@ -1,11 +1,11 @@
 import React from 'react';
 
 export const CardsListItem = (props) => {
-  //console.log('CARD LIST ITEM' , props)
+  // console.log('CARD LIST ITEM' , props)
+
   return (
     <li>
-        <div className="card">
-          <h1>Card</h1>
+        <div className="card"> 
           <div className="attribute"><span>Title: </span>{props.title}</div>
           <div className="attribute"><span>Priority: </span>{props.priority}</div>
           <div className="attribute"><span>Status: </span>{props.status}</div>
