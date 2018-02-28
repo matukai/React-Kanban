@@ -29,17 +29,16 @@ class CardList extends Component {
   }
   
   downHandler(event) {
-    const target = this.findCard(event)
-    console.log('doooown handler', event.target.id)
+    const target = this.findCard(event.target.id)
   }
   
-  findCard(name) {
-    //console.log(name)
+  findCard(id) {
+    console.log('IIIIDDDD',id)
     const foundCard = this.props.cards.find(card => {
-      //console.log(card.title)
-      return card.name === name;
+      //console.log(card.id)
+      return card.id == id;
     })
-    console.log(foundCard)
+    console.log('FOUND',foundCard)
   }
 
 
