@@ -45,7 +45,6 @@ class CardList extends Component {
     }else if(card.status === 'inProgress'){
       card.status = 'done'
     }
-    console.log(card)
     this.props.editCard(card)
   }
 
@@ -55,7 +54,6 @@ class CardList extends Component {
     }else if(card.status === 'inProgress'){
       card.status = 'queue'
     }
-    console.log(card)
     this.props.editCard(card)
   }
 

@@ -13,7 +13,6 @@ export const loadCards = () => {
       return response.json()
     })
     .then(json => {
-      //console.log(json)
       dispatch({
         type: LOAD_CARDS,
         cards: json
@@ -39,11 +38,9 @@ export const makeCard = (newCard) => {
       body: JSON.stringify(newCard)
     })
     .then(response => {
-      console.log('response from server',response)
       return response.json()
     })
     .then(json => {
-      console.log(json)
       return dispatch({
           type: MAKE_CARD,
           card: json
@@ -69,13 +66,11 @@ export const editCard = (card) => {
       body: JSON.stringify(card)
     })
     .then(response => {
-      console.log('response from server',response)
       return response.json()
     })
     .then(json => {
-      console.log(json)
       return dispatch({
-          type: MAKE_CARD,
+          type: EDIT_CARD,
           card: json
       })
     })

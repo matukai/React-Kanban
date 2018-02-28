@@ -49,7 +49,8 @@ componentDidMount() {
 const mapStateToProps = state => {
   return {
     cards: state.cards.cards,
-    newCard: state.cards.cards
+    newCard: state.cards.cards,
+    editCard: state.cards.cards
   }
 }
 
