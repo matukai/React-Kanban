@@ -6,12 +6,41 @@ import {connect} from 'react-redux';
 class CardList extends Component {
   constructor(props) {
     super(props)
+    this.state = {
+      editedCard: {
+        title: '',
+        priority: '',
+        status: '',
+        created_by: '',
+        asssigned_to: ''
+      }
+    }
+
     let cards = props.cards;
     let filter = props.filter;
     let status = props.status;
+    this.downHandler = this.downHandler.bind(this);
   }
 
 
+  
+  upHandler() {
+    
+  }
+  
+  downHandler(event) {
+    const target = this.findCard(event)
+    console.log('doooown handler', event.target.id)
+  }
+  
+  findCard(name) {
+    //console.log(name)
+    const foundCard = this.props.cards.find(card => {
+      //console.log(card.title)
+      return card.name === name;
+    })
+    console.log(foundCard)
+  }
 
 
 
@@ -27,11 +56,13 @@ class CardList extends Component {
           return (
             <CardsListItem
             key={idx}
+            id={element.id}
             title={element.title}
             priority={element.priority}
             status={element.status}
             created_by={element.created_by}
             asssigned_to={element.asssigned_to}
+            downHandler={this.downHandler}
             />)})}
       </div>
     );
@@ -46,7 +77,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    
+
   }
 }
 

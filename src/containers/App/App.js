@@ -22,17 +22,7 @@ componentDidMount() {
   this.props.loadCards();
 }
 
-clickHandler (event) {
-  const cardName = event.currentTarget
-  console.log(cardName)
-}
 
-findCard (name) {
-  const foundCard = this.props.cards.find(card => {
-    return card.name === name;
-  })
-  console.log(foundCard)
-}
 
 
   render() {

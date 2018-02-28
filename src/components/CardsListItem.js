@@ -2,6 +2,8 @@ import React, { Component} from 'react';
 import {connect} from 'react-redux';
 
 export const CardsListItem = (props) => {
+  const {downHandler} = props
+  //console.log(props)
 
 
   return (
@@ -14,9 +16,11 @@ export const CardsListItem = (props) => {
           <div className="attribute"><span>Created By: </span>{props.created_by}</div>
           <div className="attribute"><span>Assigned To: </span>{props.assigned_to}</div>
           <br/>
-          <button type="button">edit</button>
-          <button type="button" >down</button>
-          <button type="button">up</button>
+          <button type="submit">edit</button>
+
+          <button onClick={downHandler} id={props.id} >down</button>
+          {/* <button onSubmit={this.props.upHandler}type="button">up</button> */}
+
         </div>
     </li>
   );

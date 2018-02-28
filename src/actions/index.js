@@ -13,6 +13,7 @@ export const loadCards = () => {
       return response.json()
     })
     .then(json => {
+      //console.log(json)
       dispatch({
         type: LOAD_CARDS,
         cards: json
