@@ -104,6 +104,7 @@ const mapStateToProps = state => {
   }
 }
 
+//sending object to reducer
 const mapDispatchToProps = dispatch => {
   return {
     makeCard: (data) => {

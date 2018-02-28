@@ -57,13 +57,6 @@ class CardList extends Component {
     this.props.editCard(card)
   }
 
-
-
-
-
-
-
-
   render() {
     return (
       <div className={this.props.status}>
@@ -89,7 +82,6 @@ class CardList extends Component {
 
 const mapStateToProps = state => {
   return {
-
   }
 }
 

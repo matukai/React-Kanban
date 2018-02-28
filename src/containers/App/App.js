@@ -54,8 +54,9 @@ const mapStateToProps = state => {
   }
 }
 
-
-const mapDispatchToProps = dispatch => {
+//invoking method be sure to pass data if requires one
+//
+const mapDispatchToProps = (dispatch,getState) => {
   return {
     loadCards: () => {
       dispatch(loadCards());

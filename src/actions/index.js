@@ -6,6 +6,8 @@ export const LOAD_CARDS = 'LOAD_CARDS';
 export const MAKE_CARD = 'MAKE_CARD';
 export const EDIT_CARD = 'EDIT_CARD';
 
+
+// must return type and object
 export const loadCards = () => {
   return dispatch => {
     return fetch(KANBAN_API)
@@ -27,7 +29,6 @@ export const loadCards = () => {
   }
 }
 
-
 export const makeCard = (newCard) => {
   return dispatch => {
     return fetch(KANBAN_API, {
@@ -40,8 +41,10 @@ export const makeCard = (newCard) => {
     .then(response => {
       return response.json()
     })
+    //return type, and data(object) to reducer
     .then(json => {
-      return dispatch({
+      return 
+      dispatch({
           type: MAKE_CARD,
           card: json
       })
@@ -56,6 +59,7 @@ export const makeCard = (newCard) => {
 }
 
 export const editCard = (card) => {
+  //console.log('EDIT CARD BEFORE DISPATCH',card)
   let id = card.id;
   return dispatch => {
     return fetch(KANBAN_API + id, {
@@ -70,8 +74,8 @@ export const editCard = (card) => {
     })
     .then(json => {
       return dispatch({
-          type: EDIT_CARD,
-          card: json
+        type: EDIT_CARD,
+        card: json
       })
     })
     .catch(err => {
