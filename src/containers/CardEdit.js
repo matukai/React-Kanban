@@ -92,7 +92,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-
+    editCard: (data) => {
+      dispatch(editCard(data))
+    }
   }
 }
 

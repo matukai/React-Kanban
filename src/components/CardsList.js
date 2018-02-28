@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import CardsListItem from './CardsListItem';
 import {connect} from 'react-redux';
-
+import {editCard} from '../actions/index';
 
 class CardList extends Component {
   constructor(props) {
@@ -33,12 +33,10 @@ class CardList extends Component {
   }
   
   findCard(id) {
-    console.log('IIIIDDDD',id)
     const foundCard = this.props.cards.find(card => {
-      //console.log(card.id)
       return card.id == id;
     })
-    console.log('FOUND',foundCard)
+    this.props.editCard(foundCard)
   }
 
 
@@ -76,7 +74,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-
+    editCard: (card) => {
+      dispatch(editCard(card));
+    }
   }
 }
 
