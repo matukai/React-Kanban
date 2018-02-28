@@ -2,9 +2,7 @@ import React, { Component} from 'react';
 import {connect} from 'react-redux';
 
 export const CardsListItem = (props) => {
-  const {downHandler} = props
-  //console.log(props)
-
+  const {downHandler,upHandler} = props
 
   return (
     <li>
@@ -19,7 +17,7 @@ export const CardsListItem = (props) => {
           <button type="submit">edit</button>
 
           <button onClick={downHandler} id={props.id} >down</button>
-          {/* <button onSubmit={this.props.upHandler}type="button">up</button> */}
+          <button onClick={upHandler} id={props.id} >up</button>
 
         </div>
     </li>

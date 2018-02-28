@@ -20,17 +20,19 @@ class CardList extends Component {
     let filter = props.filter;
     let status = props.status;
     this.downHandler = this.downHandler.bind(this);
+    this.upHandler = this.upHandler.bind(this)
   }
 
-  upHandler() {
-    
+  upHandler(event) {
+    const id = event.target.id;
+    const foundCard = this.props.cards.find(card => {
+      return card.id == id;
+    })
+    this.upChangeStatus(foundCard)
   }
   
   downHandler(event) {
-    const target = this.findCard(event.target.id)
-  }
-  
-  findCard(id) {
+    const id = event.target.id;
     const foundCard = this.props.cards.find(card => {
       return card.id == id;
     })
@@ -47,6 +49,15 @@ class CardList extends Component {
     this.props.editCard(card)
   }
 
+  upChangeStatus(card) {
+    if(card.status === 'done'){
+      card.status = 'inProgress'
+    }else if(card.status === 'inProgress'){
+      card.status = 'queue'
+    }
+    console.log(card)
+    this.props.editCard(card)
+  }
 
 
 
@@ -71,6 +82,7 @@ class CardList extends Component {
             created_by={element.created_by}
             asssigned_to={element.asssigned_to}
             downHandler={this.downHandler}
+            upHandler={this.upHandler}
             />)})}
       </div>
     );
