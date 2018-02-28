@@ -35,10 +35,6 @@ findCard (name) {
 }
 
 
-
-
-
-
   render() {
     return (
       <div className="App">
