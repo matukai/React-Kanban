@@ -22,8 +22,6 @@ class CardList extends Component {
     this.downHandler = this.downHandler.bind(this);
   }
 
-
-  
   upHandler() {
     
   }
@@ -36,8 +34,21 @@ class CardList extends Component {
     const foundCard = this.props.cards.find(card => {
       return card.id == id;
     })
-    this.props.editCard(foundCard)
+    this.downChangeStatus(foundCard)
   }
+
+  downChangeStatus(card) {
+    if(card.status === 'queue'){
+      card.status = 'inProgress'
+    }else if(card.status === 'inProgress'){
+      card.status = 'done'
+    }
+    console.log(card)
+    this.props.editCard(card)
+  }
+
+
+
 
 
 

@@ -60,14 +60,6 @@ export const makeCard = (newCard) => {
 
 export const editCard = (card) => {
   let id = card.id;
-  console.log('BEFORE',card)
-  if(card.status === 'queue'){
-    card.status = 'inProgress'
-  }
-  if(card.status === 'inProgress'){
-    card.status = 'done'
-  }
-  console.log('AFTER', card)
   return dispatch => {
     return fetch(KANBAN_API + id, {
       method: 'PUT',
